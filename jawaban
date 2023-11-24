@@ -1,0 +1,41 @@
+SOAL
+
+3.1. Apa yang dimaksud dengan database? - Jelaskan secara singkat apa itu database
+3.2. Bagaimana kita membuat tabel database? - Jelaskan secara singkat bagaimana cara membuat tabel untuk database. Bahkan kamu bisa memberikan contoh kodenya!
+3.3. Apa itu kelas dan bagaimana kita menggunakannya? - berikan ringkasan singkat tentang teori kelas
+3.4 Menghubungkan DB ke HTML - jelaskan secara singkat bagaimana kita menghubungkan database ke halaman HTML
+3.5. Berikan pendapat pribadimu tentang topik dan pelajaran ini!
+
+JAWABAN
+
+3.1. database yaitu sebuah data yg penyimpan sebuah paket nama,email,kunci dan alamat tempat lengkap
+
+3.2. di bawah sini
+# Impor
+from flask import Flask, render_template,request, redirect
+# Mengimpor pustaka database
+from flask_sqlalchemy import SQLAlchemy
+
+
+app = Flask(__name__)
+# Menghubungkan SQLite
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///diary.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Membuat sebuah DB
+db = SQLAlchemy(app )
+
+#cara Membuat tabel DB
+class Card (db.Model):
+    # no
+    id = db.Column(db.Integer, primary_key=True)
+    # kolom lainnya
+    title = db.Column(db.String(100), nullable=False)
+    subtitle = db.Column(db.String(150), nullable=False)
+    text = db.Column(db.String(500), nullable=False)
+
+3.3 yaitu objek Pikirkan kelas sebagai blueprint dimana objek dibuat.
+cara membuat kelas
+1.card = Card(title=title, subtitle=subtitle, text=text)
+2.cards = Card.query.order_by(Card.id).all()
+
+3.4.
