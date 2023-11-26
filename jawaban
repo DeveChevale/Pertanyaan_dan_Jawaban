@@ -38,4 +38,8 @@ cara membuat kelas
 1.card = Card(title=title, subtitle=subtitle, text=text)
 2.cards = Card.query.order_by(Card.id).all()
 
-3.4.
+3.4.biasanya menggunakan bahasa pemrograman server-side seperti PHP, Python, atau Node.js
+
+3.5.sangat luar biasa! dan bisa membuat project apapun!
+
+
